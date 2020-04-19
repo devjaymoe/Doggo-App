@@ -1,12 +1,22 @@
-import React, { useContext } from 'react';
-import { store } from '../store/store.js';
+import React from 'react';
+import {connect} from 'react-redux';
+import {breedRequest} from '../store/actions'
 
-const MainPage = () => {
-  const globalState = useContext(store);
-  console.log(globalState.state.color); // this will return { color: red }
+
+const MainPage = props => {
+    console.log(props)
   return (
-      <h1>{globalState.state.color}</h1>
+    <div>
+        <button onClick={()=>{props.breedRequest()}}>Click me for Doggo</button>
+        <img src={props.img} alt='img of doggo'/>
+    </div>
   )
 };
 
-export default MainPage
+const mapStateToProps = state => {
+    return {
+      img: state.breeds.img,
+    }
+}
+
+export default connect(mapStateToProps, {breedRequest})(MainPage);
