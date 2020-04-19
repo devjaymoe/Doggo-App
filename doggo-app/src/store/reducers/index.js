@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { dogImgReducer as dogImg } from './dogImgReducer';
 import { breedListReducer as breedList } from './breedListReducer';
-import { breedImgReducer as breedImg } from './breedImgReducer';
+import { breedInfoReducer as breedInfo } from './breedInfoReducer';
 
-export default combineReducers({ dogImg, breedList, breedImg });
+export default combineReducers({ dogImg, breedList, breedInfo });

@@ -5,12 +5,13 @@ import {
 } from '../actions'
 
 const initialState = {
+    breedInfo: {},
     breedImg: '',
     isFetching: false,
     error: ''
 };
   
-export const breedImgReducer = ( state = initialState, action) => {
+export const breedInfoReducer = ( state = initialState, action) => {
     switch (action.type) {
         case FETCH_BREED_IMG_START:
             return {
@@ -21,7 +22,8 @@ export const breedImgReducer = ( state = initialState, action) => {
             // console.log(action.payload)
             return {
                 ...state,
-                breedImg: action.payload,
+                breedInfo: action.payload.breedInfo,
+                breedImg: action.payload.breedImg,
                 isFetching: false,
                 error: ''
             };

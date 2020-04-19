@@ -8,7 +8,7 @@ export const imgRequest = img => dispatch => {
     // console.log(name)
     dispatch({ type: FETCH_IMG_START });
     axios
-        .get(`https://api.thedogapi.com/v1/images/search?pug?mime_types=gif`, { headers: {"x-api-key" : "5c3d9d02-1c2d-4355-bba8-54fb2aa4fb3f"} })
+        .get(`https://api.thedogapi.com/v1/images/search?mime_types=gif`, { headers: {"x-api-key" : "5c3d9d02-1c2d-4355-bba8-54fb2aa4fb3f"} })
         .then( res => {
             // console.log(res.data.results)
             const resGif = res.data[0].url
@@ -42,14 +42,16 @@ export const FETCH_BREED_IMG_START = 'FETCH_BREED_IMG_START';
 export const FETCH_BREED_IMG_SUCCESS = 'FETCH_BREED_IMG_SUCCESS';
 export const FETCH_BREED_IMG_FAILURE = 'FETCH_BREED_IMG_FAILURE';
 
-export const breedImgRequest = breedID => dispatch => {
+export const breedInfoRequest = breedID => dispatch => {
     dispatch({ type: FETCH_BREED_IMG_START });
     axios
         .get(`https://api.thedogapi.com/v1/images/search?breed_id=${breedID}`, { headers: {"x-api-key" : "5c3d9d02-1c2d-4355-bba8-54fb2aa4fb3f"} })
         .then( res => {
-            console.log(res.data[0].url)
+            // console.log(res.data[0].url)
             const breedImg = res.data[0].url;
-            dispatch({ type: FETCH_BREED_IMG_SUCCESS, payload: breedImg})
+            const [breedInfo] = res.data[0].breeds;
+            // console.log('breedInfo', breedInfo)
+            dispatch({ type: FETCH_BREED_IMG_SUCCESS, payload: { breedImg, breedInfo }})
         })
         .catch( error => {
             dispatch({ type: FETCH_BREED_IMG_FAILURE, payload: error })

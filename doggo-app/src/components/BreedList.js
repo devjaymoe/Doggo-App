@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { breedListRequest, breedImgRequest } from '../store/actions'
+import { breedListRequest, breedInfoRequest } from '../store/actions'
 
 
 const BreedList = props => {
@@ -17,7 +17,7 @@ const BreedList = props => {
                     >
                     <p>{breed.name}</p>
                     <p>{breed.id}</p>
-                    <button onClick={()=>{props.breedImgRequest(breed.id)}}>Breed Img</button>
+                    <button onClick={()=>{props.breedInfoRequest(breed.id)}}>Breed Img</button>
                 </div>
             )): null}
         </div>
@@ -27,8 +27,9 @@ const BreedList = props => {
 const mapStateToProps = state => {
     return {
       breeds: state.breedList.breeds,
-      breedImg: state.breedImg.breedImg
+      breedInfo: state.breedInfo.breedInfo,
+      breedImg: state.breedInfo.breedImg
     }
 }
 
-export default connect(mapStateToProps, { breedListRequest, breedImgRequest })( BreedList );
+export default connect(mapStateToProps, { breedListRequest, breedInfoRequest })( BreedList );
