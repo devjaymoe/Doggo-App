@@ -3,20 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+// redux store
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-
+// middleware and root reducer
 import rootReducer from './store/reducers';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-
+// react router
+import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+// router
+const AppWithRouter = withRouter(App)
+// store
 const store = createStore(rootReducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <AppWithRouter />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
