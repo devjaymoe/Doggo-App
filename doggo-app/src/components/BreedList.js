@@ -1,28 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { breedListRequest } from '../store/actions'
+import { breedListRequest, breedImgRequest } from '../store/actions'
 
 
 const BreedList = props => {
-    console.log(props.breeds)
-  return (
-    <div>
-        <button onClick={()=>{props.breedListRequest()}}>Breeds Request</button>
-        <p>{(props.breeds.length > 0) ? props.breeds.length : 0}</p>
-        {(props.breeds.length > 0) ? props.breeds.map( breed => (
-            <div className='breed' key={breed.id}>
-                <p>{breed.name}</p>
-                <p>{breed.id}</p>
-            </div>
-        )): null}
-    </div>
-  )
+    // console.log(props)
+
+    return (
+        <div>
+            <button onClick={()=>{props.breedListRequest()}}>Breeds Request</button>
+            <p>{(props.breeds.length > 0) ? props.breeds.length : 0}</p>
+            {(props.breeds.length > 0) ? props.breeds.map( breed => (
+                <div 
+                    className='breed' 
+                    key={breed.id} 
+                    >
+                    <p>{breed.name}</p>
+                    <p>{breed.id}</p>
+                    <button onClick={()=>{props.breedImgRequest(breed.id)}}>Breed Img</button>
+                </div>
+            )): null}
+        </div>
+    )
 };
 
 const mapStateToProps = state => {
     return {
       breeds: state.breedList.breeds,
+      breedImg: state.breedImg.breedImg
     }
 }
 
-export default connect(mapStateToProps, { breedListRequest })( BreedList );
+export default connect(mapStateToProps, { breedListRequest, breedImgRequest })( BreedList );

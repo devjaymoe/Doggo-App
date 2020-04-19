@@ -1,31 +1,31 @@
 import { 
-    FETCH_BREEDS_START,
-    FETCH_BREEDS_SUCCESS,
-    FETCH_BREEDS_FAILURE
+    FETCH_BREED_IMG_START,
+    FETCH_BREED_IMG_SUCCESS,
+    FETCH_BREED_IMG_FAILURE
 } from '../actions'
 
 const initialState = {
-    breeds: [],
+    breedImg: '',
     isFetching: false,
     error: ''
 };
   
-export const breedListReducer = ( state = initialState, action) => {
+export const breedImgReducer = ( state = initialState, action) => {
     switch (action.type) {
-        case FETCH_BREEDS_START:
+        case FETCH_BREED_IMG_START:
             return {
                 ...state,
                 isFetching: true
             };
-        case FETCH_BREEDS_SUCCESS:
+        case FETCH_BREED_IMG_SUCCESS:
             // console.log(action.payload)
             return {
                 ...state,
-                breeds: action.payload,
+                breedImg: action.payload,
                 isFetching: false,
                 error: ''
             };
-        case FETCH_BREEDS_FAILURE:
+        case FETCH_BREED_IMG_FAILURE:
             return {
                 ...state,
                 isFetching: false,
