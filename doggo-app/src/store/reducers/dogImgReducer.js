@@ -1,17 +1,23 @@
+import { 
+    FETCH_IMG_START, 
+    FETCH_IMG_SUCCESS,
+    FETCH_IMG_FAILURE
+} from '../actions'
+
 const initialState = {
-  img: '',
+  img: 'https://cdn2.thedogapi.com/images/BJWc57iNQ.gif',
   isFetching: false,
   error: ''
 };
 
-export const breedReducer = ( state = initialState, action) => {
+export const dogImgReducer = ( state = initialState, action) => {
   switch (action.type) {
-      case 'FETCH_CHARACTERS_START':
+      case FETCH_IMG_START:
           return {
               ...state,
               isFetching: true
           };
-      case 'FETCH_CHARACTERS_SUCCESS':
+      case FETCH_IMG_SUCCESS:
           // console.log(action.payload)
           return {
               ...state,
@@ -19,7 +25,7 @@ export const breedReducer = ( state = initialState, action) => {
               img: action.payload,
               error: ''
           };
-      case 'FETCH_CHARACTERS_FAILURE':
+      case FETCH_IMG_FAILURE:
           return {
               ...state,
               isFetching: false,
