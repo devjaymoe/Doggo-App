@@ -1,0 +1,19 @@
+.navigation {
+	display: flex;
+	justify-content: space-around;
+	padding: 0 100px;
+	transition: 0.2s ease-in;
+	margin-bottom: 35px;
+    background: #235952;
+    
+	a {
+		color: whitesmoke;
+		text-decoration: none;
+        padding: 30px 20px;
+        margin-bottom: 5px;
+        border-bottom: 2px solid #235952;
+        &:hover{
+            border-bottom: 2px solid whitesmoke;
+        }
+	}
+}

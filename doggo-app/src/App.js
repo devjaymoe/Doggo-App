@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
 import Navigation from './components/Navigation';
 import MainPage from './components/MainPage';
 import BreedList from './components/BreedList';
@@ -19,7 +18,6 @@ function App() {
       <Route path='/breed_profile'>
         <BreedProfile/>
       </Route>
-
     </div>
   );
 }

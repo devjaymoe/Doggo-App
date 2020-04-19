@@ -2,21 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const BreedProfile = props => {
-    console.log(props)
+    // console.log(props)
     return (
-        <div>
+        <div className='breed-profile-container'>
             { props.breedImg ? 
-            <div>
-            <h2>Breed Profile</h2>
-            <h3>{props.breedInfo.name}</h3>
-            <img src={props.breedImg} alt='doggo' width='300'/>
-            <p>Weight: {props.breedInfo.weight.imperial} lbs</p>
-            <p>Height: {props.breedInfo.height.imperial} ft</p>
-            <p>Bred for: {props.breedInfo.bred_for}</p>
-            <p>Breed group: {props.breedInfo.breed_group}</p>
-            <p>Life Span: {props.breedInfo.life_span}</p>
-            <p>Temperament: {props.breedInfo.temperament}</p>
-            <p>Origin: { props.breedInfo.origin ? props.breedInfo.origin: 'unknown'}</p> 
+            <div className='card'>
+                <h2 className='breed-name'>{props.breedInfo.name}</h2>
+                <img src={props.breedImg} alt='doggo' width='450'/>
+                <div className='basics'>
+                    <p>Weight: {props.breedInfo.weight.imperial} lbs</p>
+                    <p>Height: {props.breedInfo.height.imperial} inches</p>
+                    <p>Life Span: {props.breedInfo.life_span}</p>
+                </div>
+                <div className='additional-info'>
+                {props.breedInfo.bred_for ? <p>Bred for: {props.breedInfo.bred_for}</p> : null}
+                {props.breedInfo.breed_group ? <p>Breed group: {props.breedInfo.breed_group}</p> : null }
+                {props.breedInfo.temperament? <p>Temperament: {props.breedInfo.temperament}</p> : null }
+                { props.breedInfo.origin ? <p>Origin: {props.breedInfo.origin}</p> : null}
+                </div>
             </div>
             : null }
         </div>

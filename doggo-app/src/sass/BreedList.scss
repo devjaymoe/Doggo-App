@@ -1,0 +1,33 @@
+.breed-list-container {
+    display: flex;
+    flex-flow: column wrap;
+    
+    .breed-list-number{
+        margin-bottom: 20px;
+    }
+    .breeds {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .breed{
+            display: flex;
+            width: 30%;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 5px;
+            background-color: #ffc8bd;
+            border: 1px solid #ecfbfc;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+
+            button{
+                background-color: #ffc8bd;
+                border: 1px solid #ecfbfc;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
