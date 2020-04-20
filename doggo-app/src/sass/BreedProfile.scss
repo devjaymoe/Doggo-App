@@ -1,0 +1,47 @@
+.breed-profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.card {
+    width: 450px;
+    background-color: #ecfbfc;
+    border: 2px solid #235952;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+
+    .breed-name {
+        margin: 5px 0;
+    }
+    .basics{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 25px;
+        border-bottom: 1px solid #235952;
+        width: 90%;
+        margin: auto;
+        p{
+            margin: 0 5px;
+        }
+    }
+    .additional-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        div {
+            display:flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #235952;
+            margin: 10px; 
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+
+    }
+}

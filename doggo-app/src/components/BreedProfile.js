@@ -12,13 +12,27 @@ const BreedProfile = props => {
                 <div className='basics'>
                     <p>Weight: {props.breedInfo.weight.imperial} lbs</p>
                     <p>Height: {props.breedInfo.height.imperial} inches</p>
-                    <p>Life Span: {props.breedInfo.life_span}</p>
                 </div>
                 <div className='additional-info'>
-                {props.breedInfo.bred_for ? <p>Bred for: {props.breedInfo.bred_for}</p> : null}
-                {props.breedInfo.breed_group ? <p>Breed group: {props.breedInfo.breed_group}</p> : null }
-                {props.breedInfo.temperament? <p>Temperament: {props.breedInfo.temperament}</p> : null }
-                { props.breedInfo.origin ? <p>Origin: {props.breedInfo.origin}</p> : null}
+                    <div>
+                        <p>Life Span: </p><span>{props.breedInfo.life_span}</span>
+                    </div>
+                    {props.breedInfo.bred_for ? 
+                        <div>
+                            <p>Bred for: </p><span>{props.breedInfo.bred_for}</span>
+                        </div> : null}
+                    {props.breedInfo.breed_group ?
+                        <div> 
+                            <p>Breed group: </p> <span>{props.breedInfo.breed_group}</span> 
+                        </div> : null }
+                    {props.breedInfo.temperament ? 
+                        <div>
+                            <p>Temperament: </p><span>{props.breedInfo.temperament}</span> 
+                        </div> : null }
+                    { props.breedInfo.origin ?
+                        <div>
+                            <p>Origin: </p><span>{props.breedInfo.origin}</span> 
+                        </div> : null}
                 </div>
             </div>
             : null }

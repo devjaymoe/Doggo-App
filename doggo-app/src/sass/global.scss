@@ -87,6 +87,8 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&family=Roboto:wght@500&display=swap');
+
 article,
 aside,
 details,
@@ -126,4 +128,16 @@ table {
 html {
 	font-family: sans-serif;
 	background: #ffebd9;
+}
+
+h1, h2 {
+	font-family: 'Roboto', sans-serif;
+}
+
+p {
+	font-family: 'Baloo Paaji 2', cursive;
+}
+
+a, button {
+	font-family: 'Roboto', sans-serif;
 }

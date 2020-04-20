@@ -15,19 +15,25 @@
             justify-content: space-between;
             padding: 10px;
             margin: 5px;
-            background-color: #ffc8bd;
-            border: 1px solid #ecfbfc;
+            background-color: #ecfbfc;
+            border: 1px solid #235952;
             border-radius: 5px;
-            -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+            box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
 
             button{
-                background-color: #ffc8bd;
-                border: 1px solid #ecfbfc;
+                background-color: #ecfbfc;
+                border: 1px solid #235952;
                 padding: 5px 10px;
                 cursor: pointer;
+                border-radius: 5px;
+                width: 75px;
+            }
+            @media (max-width: 800px){
+                width: 40%;
             }
         }
+        
     }
 }
