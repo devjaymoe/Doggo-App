@@ -8,7 +8,7 @@ const BreedProfile = props => {
             { props.breedImg ? 
             <div className='card'>
                 <h2 className='breed-name'>{props.breedInfo.name}</h2>
-                <img src={props.breedImg} alt='doggo' width='450'/>
+                <img src={props.breedImg} alt='doggo' width='300'/>
                 <div className='basics'>
                     <p>Weight: {props.breedInfo.weight.imperial} lbs</p>
                     <p>Height: {props.breedInfo.height.imperial} inches</p>
